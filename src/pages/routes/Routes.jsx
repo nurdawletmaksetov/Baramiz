@@ -11,10 +11,8 @@ const Routes = () => {
     const times = ["1 час", "2 часа", "3 часа", "Пол дня"];
     const interests = ["History", "Museums", "Food", "Nature", "Shopping"];
 
-    // Tanlangan shahar bo’yicha object chiqaramiz
     const selectedCity = regions.find((r) => r.name === city);
 
-    // Tanlangan qiziqishga mos joylar
     const selectedPlaces =
         selectedCity?.categories?.[interest] || [];
 
@@ -25,7 +23,6 @@ const Routes = () => {
                     Создай маршрут по <span className="text-orange-500">Каракалпакстану</span>
                 </h1>
 
-                {/* 1. Shahar tanlash */}
                 <div className="mb-12">
                     <p className="text-2xl font-semibold mb-4">1. Выберите город</p>
 
@@ -60,7 +57,6 @@ const Routes = () => {
                     </Carousel>
                 </div>
 
-                {/* 2. Time */}
                 <div className="mb-12">
                     <p className="text-2xl font-semibold mb-4">2. Выберите время</p>
 
