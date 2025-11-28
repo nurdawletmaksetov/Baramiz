@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&display=swap');
+
+@theme {
+  --color-primary: linear-gradient(125deg, rgba(255, 198, 148, 1) 0%, rgba(255, 245, 236, 1) 25%, rgba(255, 255, 255, 1) 53%, rgba(255, 248, 241, 1) 66%, rgba(255, 190, 133, 1) 100%);
+  --color-text-black: #1C1C1C;
+  --color-yellowred: #FF7F0F;
+  --color-notselected: #00000040;
+  --color-text-gray: #606060;
+  --color-secondary-bg: #EDEDED;
+
+  --font-monsterrant: "Montserrat", sans-serif;
+}
+
+body {
+  /* background: var(--color-primary); */
+  font-family: var(--font-monsterrant);
+}
