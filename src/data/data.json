@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Nukus",
-        "image": "https://via.placeholder.com/300x200",
+        "image": "https://meros.uz/upload/2017/02/786645ab9be0db079110286db91c711c-large.jpg",
         "rating": 4.5,
         "categories": {
             "History": [
@@ -140,7 +140,7 @@
     {
         "id": 2,
         "name": "Moynaq",
-        "image": "https://via.placeholder.com/300x200",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Moynaq%2C_Aral_Sea_%286226807306%29.jpg/1280px-Moynaq%2C_Aral_Sea_%286226807306%29.jpg",
         "rating": 5,
         "categories": {
             "History": [
@@ -203,45 +203,9 @@
     },
     {
         "id": 3,
-        "name": "Ellikqala",
-        "image": "https://via.placeholder.com/300x200",
-        "rating": 3.5,
-        "categories": {
-            "History": [
-                {
-                    "title": {
-                        "kk": "Аязқала қаласы",
-                        "uz": "Ayazqala",
-                        "en": "Ayaz-Kala Fortress",
-                        "ru": "Крепость Аяз-Кала"
-                    },
-                    "duration": 90,
-                    "img": "https://via.placeholder.com/300x200"
-                },
-                {
-                    "title": {
-                        "kk": "Топраққала қаласы",
-                        "uz": "Topraq-Qala",
-                        "en": "Toprak-Kala Fortress",
-                        "ru": "Крепость Топрак-Кала"
-                    },
-                    "duration": 70,
-                    "img": "https://via.placeholder.com/300x200"
-                }
-            ],
-            "Nature": [
-                {
-                    "title": {
-                        "kk": "Шөл панорама көриниси",
-                        "uz": "Cho‘l panorama nuqtasi",
-                        "en": "Desert Viewpoint",
-                        "ru": "Смотровая точка пустыни"
-                    },
-                    "duration": 45,
-                    "img": "https://via.placeholder.com/300x200"
-                }
-            ]
-        }
+        "name": "Shilpiqqala",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Chilpiq.JPG/1280px-Chilpiq.JPG",
+        "rating": 5
     },
     {
         "id": 4,
@@ -284,6 +248,12 @@
                 }
             ]
         }
+    },
+    {
+        "id": 4,
+        "name": "Shilpiqqala",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Chilpiq.JPG/1280px-Chilpiq.JPG",
+        "rating": 5
     },
     {
         "id": 5,

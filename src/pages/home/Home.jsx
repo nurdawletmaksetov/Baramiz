@@ -2,6 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { Container } from "../../container/container";
 import MainImage from "../../assets/mainimg.svg"
 import { Flex, MultiSelect, Select } from "@mantine/core";
+import BaramizChat from "../../components/aiChatBot/BaramizChat";
+import PopularDirections from "../../components/popularDirections/PopularDirections";
+import WhyUs from "../../components/whyUs/WhyUs";
 
 const Home = () => {
 
@@ -92,7 +95,13 @@ const Home = () => {
                             </div>
                         </div>
                         <div>
-                            {/* Baramiz AI */}
+                            <BaramizChat />
+                        </div>
+                        <div>
+                            <PopularDirections />
+                        </div>
+                        <div>
+                            <WhyUs />
                         </div>
                     </div>
                 </section>
