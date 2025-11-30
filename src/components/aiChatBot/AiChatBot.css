@@ -1,5 +1,6 @@
 .page-bg {
-    min-height: 100vh;
+    /* min-height: 100vh; */
+    padding: 60px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +24,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.8rem 1.5rem;
-    background: linear-gradient(90deg, #5c39ff, #f46a2f);
+    background: linear-gradient(90deg, #ffb481, #f46a2f);
     color: white;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -199,3 +200,4 @@
 .chat-send-arrow {
     transform: translateX(1px);
 }
+

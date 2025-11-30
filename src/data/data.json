@@ -13,7 +13,7 @@
                         "en": "Savitsky Museum",
                         "ru": "Музей Савицкого"
                     },
-                    "duration": 60,
+                    "duration": "50 - 60",
                     "img": "https://via.placeholder.com/300x200"
                 },
                 {
@@ -23,7 +23,7 @@
                         "en": "Mizdakhan Necropolis",
                         "ru": "Некрополь Миздахкан"
                     },
-                    "duration": 90,
+                    "duration": "80 - 90",
                     "img": "https://via.placeholder.com/300x200"
                 },
                 {
@@ -33,7 +33,7 @@
                         "en": "Gyaur-Kala Fortress",
                         "ru": "Крепость Гяур-Кала"
                     },
-                    "duration": 45,
+                    "duration": "35 - 45",
                     "img": "https://via.placeholder.com/300x200"
                 }
             ],
@@ -45,7 +45,7 @@
                         "en": "Savitsky State Art Museum",
                         "ru": "Государственный музей искусств Савицкого"
                     },
-                    "duration": 90,
+                    "duration": "80 - 90",
                     "img": "https://via.placeholder.com/300x200"
                 },
                 {
@@ -55,7 +55,7 @@
                         "en": "Karakalpak State Museum",
                         "ru": "Каракалпакский государственный музей"
                     },
-                    "duration": 60,
+                    "duration": "50 - 60",
                     "img": "https://via.placeholder.com/300x200"
                 }
             ],
@@ -67,7 +67,7 @@
                         "en": "Bono Restaurant",
                         "ru": "Ресторан Bono"
                     },
-                    "duration": 60,
+                    "duration": "40 - 60",
                     "img": "https://via.placeholder.com/300x200"
                 },
                 {
@@ -77,7 +77,7 @@
                         "en": "Jipek Joli Cafe",
                         "ru": "Кафе Jipek Joli"
                     },
-                    "duration": 45,
+                    "duration": "35 - 45",
                     "img": "https://via.placeholder.com/300x200"
                 },
                 {
@@ -87,7 +87,7 @@
                         "en": "Billy’s Grill",
                         "ru": "Billy’s Grill"
                     },
-                    "duration": 60,
+                    "duration": "50 - 60",
                     "img": "https://via.placeholder.com/300x200"
                 }
             ],
@@ -99,7 +99,7 @@
                         "en": "Amu Darya Riverside",
                         "ru": "Набережная Амударьи"
                     },
-                    "duration": 40,
+                    "duration": "30 - 40",
                     "img": "https://via.placeholder.com/300x200"
                 },
                 {
@@ -109,7 +109,7 @@
                         "en": "Aibek Lake",
                         "ru": "Озеро Айбек"
                     },
-                    "duration": 60,
+                    "duration": "50 - 60",
                     "img": "https://via.placeholder.com/300x200"
                 }
             ],
@@ -121,7 +121,7 @@
                         "en": "Nukus Central Bazaar",
                         "ru": "Центральный рынок Нукуса"
                     },
-                    "duration": 45,
+                    "duration": "35 - 45",
                     "img": "https://via.placeholder.com/300x200"
                 },
                 {
@@ -131,7 +131,7 @@
                         "en": "Dostyq Mall",
                         "ru": "Dostyq Mall"
                     },
-                    "duration": 50,
+                    "duration": "40 -50",
                     "img": "https://via.placeholder.com/300x200"
                 }
             ]
@@ -151,7 +151,7 @@
                         "en": "Ship Graveyard",
                         "ru": "Кладбище кораблей"
                     },
-                    "duration": 40,
+                    "duration": "30 - 40",
                     "img": "https://via.placeholder.com/300x200"
                 },
                 {
@@ -161,7 +161,7 @@
                         "en": "Aral Sea Memorial",
                         "ru": "Мемориал Аральского моря"
                     },
-                    "duration": 35,
+                    "duration": "25 - 35",
                     "img": "https://via.placeholder.com/300x200"
                 }
             ],
@@ -173,7 +173,7 @@
                         "en": "Aral Sea Viewpoint",
                         "ru": "Смотровая площадка Арала"
                     },
-                    "duration": 90,
+                    "duration": "80 - 90",
                     "img": "https://via.placeholder.com/300x200"
                 },
                 {
@@ -183,7 +183,7 @@
                         "en": "Ustyurt Plateau Edge",
                         "ru": "Плато Устюрт"
                     },
-                    "duration": 120,
+                    "duration": "110 - 120",
                     "img": "https://via.placeholder.com/300x200"
                 }
             ],
@@ -195,7 +195,7 @@
                         "en": "Moynaq Local Cafe",
                         "ru": "Местное кафе Муйнак"
                     },
-                    "duration": 40,
+                    "duration": "30 - 40",
                     "img": "https://via.placeholder.com/300x200"
                 }
             ]
@@ -210,7 +210,7 @@
     {
         "id": 4,
         "name": "Ellikqala",
-        "image": "https://via.placeholder.com/300x200",
+        "image": "https://old.joqargikenes.uz/wp-content/uploads/2019/08/02-Ellikqala.jpg",
         "rating": 3.5,
         "categories": {
             "History": [
@@ -221,7 +221,7 @@
                         "en": "Ayaz-Kala Fortress",
                         "ru": "Крепость Аяз-Кала"
                     },
-                    "duration": 90,
+                    "duration": "80 - 90",
                     "img": "https://via.placeholder.com/300x200"
                 },
                 {
@@ -231,7 +231,7 @@
                         "en": "Toprak-Kala Fortress",
                         "ru": "Крепость Топрак-Кала"
                     },
-                    "duration": 70,
+                    "duration": "60 - 70",
                     "img": "https://via.placeholder.com/300x200"
                 }
             ],
@@ -243,97 +243,7 @@
                         "en": "Desert Viewpoint",
                         "ru": "Смотровая точка пустыни"
                     },
-                    "duration": 45,
-                    "img": "https://via.placeholder.com/300x200"
-                }
-            ]
-        }
-    },
-    {
-        "id": 4,
-        "name": "Shilpiqqala",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Chilpiq.JPG/1280px-Chilpiq.JPG",
-        "rating": 5
-    },
-    {
-        "id": 5,
-        "name": "Ellikqala",
-        "image": "https://via.placeholder.com/300x200",
-        "rating": 3.5,
-        "categories": {
-            "History": [
-                {
-                    "title": {
-                        "kk": "Аязқала қаласы",
-                        "uz": "Ayazqala",
-                        "en": "Ayaz-Kala Fortress",
-                        "ru": "Крепость Аяз-Кала"
-                    },
-                    "duration": 90,
-                    "img": "https://via.placeholder.com/300x200"
-                },
-                {
-                    "title": {
-                        "kk": "Топраққала қаласы",
-                        "uz": "Topraq-Qala",
-                        "en": "Toprak-Kala Fortress",
-                        "ru": "Крепость Топрак-Кала"
-                    },
-                    "duration": 70,
-                    "img": "https://via.placeholder.com/300x200"
-                }
-            ],
-            "Nature": [
-                {
-                    "title": {
-                        "kk": "Шөл панорама көриниси",
-                        "uz": "Cho‘l panorama nuqtasi",
-                        "en": "Desert Viewpoint",
-                        "ru": "Смотровая точка пустыни"
-                    },
-                    "duration": 45,
-                    "img": "https://via.placeholder.com/300x200"
-                }
-            ]
-        }
-    },
-    {
-        "id": 6,
-        "name": "Ellikqala",
-        "image": "https://via.placeholder.com/300x200",
-        "rating": 3.5,
-        "categories": {
-            "History": [
-                {
-                    "title": {
-                        "kk": "Аязқала қаласы",
-                        "uz": "Ayazqala",
-                        "en": "Ayaz-Kala Fortress",
-                        "ru": "Крепость Аяз-Кала"
-                    },
-                    "duration": 90,
-                    "img": "https://via.placeholder.com/300x200"
-                },
-                {
-                    "title": {
-                        "kk": "Топраққала қаласы",
-                        "uz": "Topraq-Qala",
-                        "en": "Toprak-Kala Fortress",
-                        "ru": "Крепость Топрак-Кала"
-                    },
-                    "duration": 70,
-                    "img": "https://via.placeholder.com/300x200"
-                }
-            ],
-            "Nature": [
-                {
-                    "title": {
-                        "kk": "Шөл панорама көриниси",
-                        "uz": "Cho‘l panorama nuqtasi",
-                        "en": "Desert Viewpoint",
-                        "ru": "Смотровая точка пустыни"
-                    },
-                    "duration": 45,
+                    "duration": "35 - 45",
                     "img": "https://via.placeholder.com/300x200"
                 }
             ]

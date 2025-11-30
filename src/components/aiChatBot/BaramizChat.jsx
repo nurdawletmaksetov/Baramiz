@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./AiChatBot.css";
+import { motion } from "motion/react";
 
-const OPENAI_API_KEY = "OPENAI_API_KEY";
+const GEMINI_API_KEY = "AIzaSyDT8IuIlO4Y1NK-AaivgQ5MTRXLxJfutJM";
 
 export default function BaramizChat() {
     const [messages, setMessages] = useState([{
-        role: "assistant", content: "Salom! Qayerga sayohat qilmoqchisiz?️",
+        role: "assistant", content: "Salom! Qayerga sayohat qilmoqchisiz?",
     },]);
     const [input, setInput] = useState("");
     const [loading, setLoading] = useState(false);
@@ -20,24 +21,37 @@ export default function BaramizChat() {
         setLoading(true);
 
         try {
-            const res = await fetch("https://api.openai.com/v1/responses", {
-                method: "POST", headers: {
-                    "Content-Type": "application/json", Authorization: `Bearer ${OPENAI_API_KEY}`,
-                }, body: JSON.stringify({
-                    model: "gpt-4.1-mini", input: newMessages.map((m) => ({
-                        role: m.role, content: m.content,
-                    })),
+            const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+
+            const contents = newMessages.map((m) => ({
+                role: m.role === "assistant" ? "model" : m.role,
+                parts: [{ text: m.content }],
+            }));
+
+            const res = await fetch(GEMINI_ENDPOINT, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    model: "gemini-2.5-flash",
+                    contents: contents,
                 }),
             });
 
             const data = await res.json();
-            const aiText = data.output?.[0]?.content?.[0]?.text || "Uzr, hozir javob berish imkoni yo'q.";
+
+            const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Uzr, hozir javob berish imkoni yo'q.";
+
+            if (data.error) {
+                throw new Error(data.error.message || "Gemini API dan javob olishda xatolik.");
+            }
 
             setMessages((prev) => [...prev, { role: "assistant", content: aiText }]);
         } catch (err) {
             console.error(err);
             setMessages((prev) => [...prev, {
-                role: "assistant", content: "Xatolik yuz berdi. Keyinroq urinib ko‘ring"
+                role: "assistant", content: "Xatolik yuz berdi. Keyinroq urinib ko‘ring: " + err.message
             },]);
         } finally {
             setLoading(false);
@@ -53,7 +67,17 @@ export default function BaramizChat() {
 
     return (
         <div className="page-bg">
-            <div className="chat-card">
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 1 }}
+                transition={{ duration: 1 }}
+                variants={{
+                    hidden: { opacity: 0, scale: .9 },
+                    visible: { opacity: 1, scale: 1 },
+                }}
+                className="chat-card"
+            >
                 <div className="chat-header">
                     <div className="chat-logo">
                         <span className="chat-logo-text">Baramiz AI</span>
@@ -102,7 +126,7 @@ export default function BaramizChat() {
                         </button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>);
 }
 

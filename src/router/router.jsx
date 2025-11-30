@@ -3,6 +3,7 @@ import Layout from "../layout/Layout";
 import Home from "../pages/home/Home";
 import About from "../pages/about/About";
 import Routes from "../pages/routes/Routes";
+import CreateRoute from "../pages/createRoute/CreateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -20,7 +21,11 @@ export const router = createBrowserRouter([
             {
                 path: "/routes",
                 element: <Routes />
-            }
+            },
+            {
+                path: "/routes/:id",
+                element: <CreateRoute />
+            },
         ]
     }
 ])
