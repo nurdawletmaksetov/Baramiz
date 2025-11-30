@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./AiChatBot.css";
 import { motion } from "motion/react";
 
-const GEMINI_API_KEY = "AIzaSyDT8IuIlO4Y1NK-AaivgQ5MTRXLxJfutJM";
+const GEMINI_API_KEY = "";
 
 export default function BaramizChat() {
     const [messages, setMessages] = useState([{
