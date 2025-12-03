@@ -1,15 +1,39 @@
 import { NavLink } from 'react-router-dom'
 import Logo from '../../assets/logo.svg'
 import { Container } from '../../container/container'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from '@mantine/hooks';
-import { Languages, MenuIcon } from 'lucide-react';
+import { Languages, MenuIcon, X } from 'lucide-react';
 import { Button, Menu } from '@mantine/core';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMenuToggled, setIsMenuToggled] = useState(false)
+    const menuRef = useRef(null)
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setIsMenuToggled(false)
+            }
+        }
+
+        if (isMenuToggled) {
+            document.addEventListener("mousedown", handleClickOutside)
+        }
+
+        return () => document.removeEventListener("mousedown", handleClickOutside)
+    }, [isMenuToggled])
 
     const handleTopClick = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+    const handleMenuToggle = () => {
+        setIsMenuToggled(!isMenuToggled)
         window.scrollTo({
             top: 0,
             behavior: "smooth"
@@ -51,7 +75,7 @@ const Header = () => {
 
                     <div className='flex items-center justify-between'>
                         <NavLink onClick={handleTopClick} to={"/"}>
-                            <img className='max-w-[120px] sm:max-w-[150px] w-full' src={Logo} />
+                            <img className='max-w-[100px] sm:max-w-[150px] w-full' src={Logo} />
                         </NavLink>
 
                         {isMedium ? (
@@ -83,7 +107,7 @@ const Header = () => {
                                             ))}
                                         </Menu.Dropdown>
                                     </Menu>
-                                    <button onClick={handleTopClick} className='font-semibold py-2.5 px-3.5 rounded-[30px] border border-yellowred text-text-black'>
+                                    <button onClick={handleTopClick} className={isScrolled ? 'font-semibold py-2.5 px-3.5 rounded-[30px] text-text-black' : 'font-semibold py-2.5 px-3.5 rounded-[30px] border border-yellowred text-text-black'}>
                                         Войти
                                     </button>
                                     <button onClick={handleTopClick} className='font-semibold py-2.5 px-3.5 rounded-[30px] border bg-yellowred text-white'>
@@ -92,8 +116,31 @@ const Header = () => {
                                 </div>
                             </>
                         ) : (
-                            <div>
-                                <MenuIcon />
+                            <div className='flex items-center gap-5'>
+                                <button onClick={handleTopClick} className='font-bold text-text-black'>
+                                    Войти
+                                </button>
+                                <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
+                                    <MenuIcon />
+                                </button>
+                            </div>
+                        )}
+                        {!isMedium && isMenuToggled && (
+                            <div ref={menuRef} className='px-6 gap-40 py-[25px] bg-yellowred flex flex-col items-start fixed right-0 bottom-0 z-40 h-full w-[180px] bg-light-yellow drop-shadow-xl'>
+                                <button onClick={() => setIsMenuToggled(false)} >
+                                    <X className='text-dark-blue' />
+                                </button>
+                                <ul className='text-xl text-dark-blue flex flex-col gap-5 mb-10'>
+                                    <NavLink onClick={handleMenuToggle} to={"/"}>Главная</NavLink>
+                                    <NavLink onClick={handleMenuToggle} to={"/about"}>О нас</NavLink>
+                                    <NavLink onClick={handleMenuToggle} to={"/routes"}>Маршруты</NavLink>
+                                </ul>
+                                {/* <div className='flex flex-col gap-2.5 items-center'>
+                                    
+                                    <button onClick={handleTopClick} className='font-semibold py-2.5 px-3.5 rounded-[30px] border bg-yellowred text-white'>
+                                        Регистрация
+                                    </button>
+                                </div> */}
                             </div>
                         )}
                     </div>

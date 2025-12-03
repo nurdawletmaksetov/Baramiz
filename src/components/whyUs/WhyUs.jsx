@@ -77,7 +77,7 @@ const WhyUs = () => {
                             visible: { opacity: 1, scale: 1 }
                         }}
                         key={item.id}
-                        className="bg-white rounded-[20px] shadow-md p-6 flex flex-col items-center min-h-[280px] text-center gap-4 w-full max-w-[320px]"
+                        className="bg-white rounded-[20px] shadow-md p-6 flex flex-col items-center min-h-[280px] text-center gap-4 w-full sm:max-w-[320px]"
                     >
                         <div className="icon text-2xl bg-gray-300 p-3 rounded-full">{item.icon}</div>
 

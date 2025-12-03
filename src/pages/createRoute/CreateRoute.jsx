@@ -29,12 +29,9 @@ const getInterestIcon = (interest) => {
 };
 
 const generateTextRoute = async ({ location, time, interest }) => {
-    // API Kalitini shu yerga kiriting!
-
 
     const interestString = Array.isArray(interest) ? interest.join(", ") : interest;
 
-    // Prompt o'zbek tilida yozilishi kerak, natija JSON bo'ladi
     const prompt = `
     Sen Baramiz AI marshrut generatorisan. O'zbekistondagi real geografik joylar va vaqtlarini bilasan.
     Foydalanuvchi quyidagi ma'lumotlarni berdi:
@@ -52,7 +49,6 @@ const generateTextRoute = async ({ location, time, interest }) => {
     Javobni faqat JSON formatida qaytar.
     `;
 
-    // JSON Schema
     const routeSchema = {
         type: "OBJECT", properties: {
             total_trip_time: { type: "STRING", description: "Umumiy marshrutga ketgan vaqt (misol: 2 soat 15 minut)" },
@@ -109,7 +105,7 @@ const generateTextRoute = async ({ location, time, interest }) => {
         } catch (error) {
             attempts++;
             if (attempts < maxAttempts) {
-                await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, attempts - 1))); // Exponential backoff
+                await new Promise(resolve => setTimeout(resolve, 1000 * Math.pow(2, attempts - 1)));
             } else {
                 throw new Error(`AI marshrutini generatsiya qilishda xatolik yuz berdi. Tafsilot: ${error.message}`);
             }
@@ -118,16 +114,13 @@ const generateTextRoute = async ({ location, time, interest }) => {
 };
 
 const generateImage = async (prompt) => {
-    // To'lovli API chaqiruvlari o'rniga, joy nomini ko'rsatuvchi bepul placeholder ishlatiladi.
     const locationName = prompt.split(',')[0].trim();
     const encodedText = encodeURIComponent(locationName || "Travel Destination");
 
-    // Yuqori kontrastli va jozibali placeholder URL qaytariladi.
     return `https://placehold.co/1600x900/1E3A8A/BFDBFE?text=${encodedText.replace(/\s/g, '+')}&font=sans-serif`;
 };
 
 const CreateRoute = ({ city, time, interest, onBack }) => {
-    // State management for AI results and loading
     const [routeResult, setRouteResult] = useState(null);
     const [loading, setLoading] = useState(false);
     const [imageLoading, setImageLoading] = useState(false);
@@ -145,11 +138,9 @@ const CreateRoute = ({ city, time, interest, onBack }) => {
 
         let routeData;
         try {
-            // 1. Marshrut matnini generatsiya qilish
             routeData = await generateTextRoute({ location: city, time, interest });
             setRouteResult(routeData);
 
-            // 2. Agar matn generatsiya qilinsa, rasmlarni yuklash
             if (routeData && routeData.route) {
                 await generateImagesForRoute(routeData.route);
             }
@@ -162,7 +153,6 @@ const CreateRoute = ({ city, time, interest, onBack }) => {
     }, [city, time, interest]);
 
     useEffect(() => {
-        // Scroll to top as requested in user's original code
         window.scrollTo({ top: 0, behavior: "smooth" });
         fetchRoute();
     }, [fetchRoute]);
@@ -187,38 +177,34 @@ const CreateRoute = ({ city, time, interest, onBack }) => {
 
     const overallLoading = loading || imageLoading;
 
-    return (<div className="pb-20 pt-8 bg-gray-50 min-h-screen">
+    return (<div className="min-h-screen">
         <Container>
-            {/* Orqaga tugmasi */}
-            <div className="mt-8 mb-6">
+            <div className="mt-0 sm:mt-8 mb-6">
                 {onBack && (<button
                     onClick={onBack}
-                    className="text-orange-500 hover:text-orange-600 flex items-center gap-1 font-semibold text-lg transition duration-200"
+                    className="text-orange-500 hover:text-orange-600 flex items-center gap-1 font-semibold text-[16px] sm:text-lg transition duration-200"
                 >
                     <ChevronLeft className="w-6 h-6" />
                     Составить другой маршрут
                 </button>)}
             </div>
 
-            {/* Sarlavha */}
-            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
-                <MapPin className="inline-block w-8 h-8 mr-3 text-orange-500 flex-shrink-0" />
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 pb-4 mb-4">
+                <MapPin className="inline-block w-6 sm:w-8 h-6 sm:h-8 mr-1 sm:mr-3 text-orange-500 shrink-0" />
                 Маршрут для <span className="text-orange-500">{city}</span>
             </h1>
 
-            {/* Parametrlar */}
             <div className="flex flex-wrap gap-x-8 gap-y-4 text-xl text-gray-700 mb-12 border-b pb-4">
-                <p className="flex items-center gap-2">
+                <p className="flex text-xl sm:text-2xl items-center gap-2">
                     <Timer className="w-6 h-6 text-orange-500" />
                     Время: {time}
                 </p>
-                <p className="flex items-center gap-2">
+                <p className="flex text-xl sm:text-2xl items-center gap-2">
                     {InterestIcon}
                     Интерес: {interestDisplay}
                 </p>
             </div>
 
-            {/* Loading / Error Messages */}
             {overallLoading && (
                 <div className="text-center p-8 bg-yellow-50 border border-yellow-200 rounded-xl shadow-lg mb-8">
                     <div className="flex flex-col items-center">
@@ -242,12 +228,11 @@ const CreateRoute = ({ city, time, interest, onBack }) => {
                 </button>
             </div>)}
 
-            <h2 className="text-3xl font-bold mb-8 flex items-center text-gray-800">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-8 flex items-start sm:items-center text-gray-800">
                 <MapPin className="w-7 h-7 mr-3 text-orange-500" />
                 Рекомендованные места
             </h2>
 
-            {/* AI Generated Route Content */}
             {routeResult && routeResult.route ? (<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {routeResult.route.map((item, i) => {
                     const imageUrl = imageUrls[i];
@@ -258,7 +243,6 @@ const CreateRoute = ({ city, time, interest, onBack }) => {
                         className="rounded-xl overflow-hidden shadow-xl border border-gray-100 bg-white hover:shadow-2xl transition-shadow duration-300 transform hover:scale-[1.02]"
                     >
 
-                        {/* Rasm ko'rsatish maydoni */}
                         <div
                             className="h-[200px] rounded-t-xl overflow-hidden w-full aspect-video bg-gray-100 flex items-center justify-center">
                             {isImageReady ? (<img
@@ -309,7 +293,7 @@ const CreateRoute = ({ city, time, interest, onBack }) => {
             </div>) : null}
 
             {routeResult && !overallLoading && (
-                <p className="text-2xl font-extrabold mt-12 pt-4 border-t-2 border-dashed border-gray-300 text-gray-800 text-center">
+                <p className="text-2xl font-extrabold mt-12 pt-4 pb-4 border-t-2 border-dashed border-gray-300 text-gray-800 text-center">
                     Общее время поездки: <span className="text-orange-500">{routeResult.total_trip_time}</span>
                 </p>)}
         </Container>

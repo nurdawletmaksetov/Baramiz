@@ -54,13 +54,13 @@ const FloatingAiAssistant = () => {
                     }`}
                 onClick={() => setIsChatOpen(!isChatOpen)}
                 style={{
-                    background: 'linear-gradient(135deg, rgba(99,102,241,0.8) 0%, rgba(168,85,247,0.8) 100%)',
-                    boxShadow: '0 0 20px rgba(139, 92, 246, 0.7), 0 0 40px rgba(124, 58, 237, 0.5), 0 0 60px rgba(109, 40, 217, 0.3)',
-                    border: '2px solid rgba(255, 255, 255, 0.2)',
+                    background: 'bg-yellowred',
+                    boxShadow: '0 0 20px yellowred',
+                    border: '2px solid yello',
                 }}
             >
                 {/* 3D effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/20 to-transparent opacity-30"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-yellowred to-yellowred opacity-30"></div>
 
                 {/* Inner glow */}
                 <div className="absolute inset-0 rounded-full border-2 border-white/10"></div>
@@ -71,7 +71,7 @@ const FloatingAiAssistant = () => {
                 </div>
 
                 {/* Glowing animation */}
-                <div className="absolute inset-0 rounded-full animate-ping opacity-20 bg-indigo-500"></div>
+                <div className="absolute inset-0 rounded-full animate-ping opacity-20 bg-yellowred"></div>
             </button>
 
             {/* Chat Interface */}
@@ -100,7 +100,7 @@ const FloatingAiAssistant = () => {
                                 </span>
                                 <button
                                     onClick={() => setIsChatOpen(false)}
-                                    className="p-1.5 rounded-full hover:bg-zinc-700/50 transition-colors"
+                                    className="p-1.5 rounded-full hover:yellowred transition-colors"
                                 >
                                     <X className="w-4 h-4 text-zinc-400" />
                                 </button>
@@ -131,7 +131,7 @@ const FloatingAiAssistant = () => {
                                     {/* Attachment Group */}
                                     <div className="flex items-center gap-1.5 p-1 bg-zinc-800/40 rounded-xl border border-zinc-700/50">
                                         {/* File Upload */}
-                                        <button className="group relative p-2.5 bg-transparent border-none rounded-lg cursor-pointer transition-all duration-300 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800/80 hover:scale-105 hover:-rotate-3 transform">
+                                        <button className="group relative p-2.5 bg-transparent border-none rounded-lg cursor-pointer transition-all duration-300 text-zinc-500 hover:text-yellowred hover:yellowred hover:scale-105 hover:-rotate-3 transform">
                                             <Paperclip className="w-4 h-4 transition-all duration-300 group-hover:scale-125 group-hover:-rotate-12" />
                                             <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 px-3 py-2 bg-zinc-900/95 text-zinc-200 text-xs rounded-lg whitespace-nowrap opacity-0 transition-all duration-300 pointer-events-none group-hover:opacity-100 group-hover:-translate-y-1 shadow-lg border border-zinc-700/50 backdrop-blur-sm">
                                                 Upload files
